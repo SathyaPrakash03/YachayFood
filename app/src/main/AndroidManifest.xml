@@ -23,7 +23,9 @@
             android:name=".SliderAdapter"
             android:screenOrientation="portrait" />
         <activity android:name=".Autentificacion" />
-        <activity android:name=".Registro"></activity>
+        <activity android:name=".Registro" />
+        <activity android:name=".ProductRegister" />
+        <activity android:name=".About"></activity>
     </application>
 
 </manifest>
