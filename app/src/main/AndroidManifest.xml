@@ -25,7 +25,12 @@
         <activity android:name=".Autentificacion" />
         <activity android:name=".Registro" />
         <activity android:name=".ProductRegister" />
-        <activity android:name=".About"></activity>
+        <activity android:name=".About" />
+        <activity
+            android:name=".LateralMenu"
+            android:label="@string/title_activity_lateral_menu"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".PerfilVendedor"></activity>
     </application>
 
 </manifest>

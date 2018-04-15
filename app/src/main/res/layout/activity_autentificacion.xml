@@ -73,6 +73,14 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/button3"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="goToHome"
+            android:text="Ingresar" />
+
+        <Button
             android:id="@+id/button2"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
