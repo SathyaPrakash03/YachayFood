@@ -3,7 +3,6 @@ package com.example.hugo.yachayfood;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -38,7 +37,7 @@ public class SliderAdapter extends PagerAdapter {
     private String [] slide_descs = {
             "Ordena en cualquier momento y a cualquier lugar",
             "Recibe tu pedido en el lugar especificado",
-            "Disfruta y califica al vendedor, animate a ser parte tambien de los vendedores"
+            "Disfruta y califica al vendedor, animate a ser parte también de los vendedores"
 
     };
 
