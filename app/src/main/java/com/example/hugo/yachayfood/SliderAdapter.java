@@ -1,12 +1,14 @@
 package com.example.hugo.yachayfood;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.RelativeLayout;
@@ -61,11 +63,18 @@ public class SliderAdapter extends PagerAdapter {
         ImageView slideImageView = (ImageView) view.findViewById(R.id.slide_image);
         TextView slideHeading = (TextView) view.findViewById(R.id.slide_heading);
         TextView  slideDescription = (TextView) view.findViewById(R.id.slide_desc);
+        Button login = (Button) view.findViewById(R.id.slide_login);
 
         slideImageView.setImageResource(slide_images[position]);
         slideHeading.setText(slide_headings[position]);
         slideDescription.setText(slide_descs[position]);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent activity=new Intent(context,Autentificacion.class);
+                context.startActivity(activity);
 
+            }});
         container.addView(view);
         return view;
     };
