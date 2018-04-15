@@ -1,5 +1,6 @@
 package com.example.hugo.yachayfood;
 
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -15,27 +16,26 @@ import android.widget.RelativeLayout;
 
 public class SliderAdapter extends PagerAdapter {
 
-    Context context;
-    LayoutInflater LayoutInflater;
+    private Context context;
 
-    public SliderAdapter (Context context){
+    SliderAdapter (Context context){
         this.context = context;
     }
 
     //Arrays
-    public int [] slide_images = {
+    private int [] slide_images = {
             R.drawable.orden,
             R.drawable.fresa,
             R.drawable.sanduche
 
     };
-    public String [] slide_headings = {
+    private String [] slide_headings = {
             "ORDENA",
             "RECIBE",
             "DISFRUTA"
 
     };
-    public String [] slide_descs = {
+    private String [] slide_descs = {
             "Ordena en cualquier momento y a cualquier lugar",
             "Recibe tu pedido en el lugar especificado",
             "Disfruta y califica al vendedor, animate a ser parte tambien de los vendedores"
@@ -50,20 +50,21 @@ public class SliderAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return view == (RelativeLayout) object;
+        return view == object;
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
-        LayoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater LayoutInflater;
+        LayoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         View view = LayoutInflater.inflate(R.layout.slide_layout,container, false);
 
-        ImageView slideImageView = (ImageView) view.findViewById(R.id.slide_image);
-        TextView slideHeading = (TextView) view.findViewById(R.id.slide_heading);
-        TextView  slideDescription = (TextView) view.findViewById(R.id.slide_desc);
-        Button login = (Button) view.findViewById(R.id.slide_login);
+        ImageView slideImageView = view.findViewById(R.id.slide_image);
+        TextView slideHeading = view.findViewById(R.id.slide_heading);
+        TextView  slideDescription =  view.findViewById(R.id.slide_desc);
+        Button login =  view.findViewById(R.id.slide_login);
 
         slideImageView.setImageResource(slide_images[position]);
         slideHeading.setText(slide_headings[position]);
@@ -77,7 +78,7 @@ public class SliderAdapter extends PagerAdapter {
             }});
         container.addView(view);
         return view;
-    };
+    }
 
 
     @Override
