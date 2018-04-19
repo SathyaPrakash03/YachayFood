@@ -80,6 +80,7 @@ public class LateralMenu extends AppCompatActivity
             case R.id.nav_feedback:
                 break;
             case R.id.nav_about_us:
+                fragment = new About();
                 break;
             case R.id.nav_help:
                 break;
