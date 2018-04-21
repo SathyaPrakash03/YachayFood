@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.foodstoreexception.Exceptions;
 
@@ -76,6 +77,7 @@ public class FragmentPerfilVendedor extends Fragment {
                 selectProductsAlert.setTitle("Which Products You Want To Delete?");
                 //We set our listOfProductThatCanBeDeleted to an array of size zero
                 listOfProductsThatCanBeDeleted = new String[0];
+                positionOfProductsForElimination.clear();
                 //We assign the number of products we really have to this array, because maybe we eliminate products one time etc
                 listOfProductsThatCanBeDeleted = new String[productos.size()];
                 //We assign the available products to the array of products that can be deleted
@@ -137,6 +139,7 @@ public class FragmentPerfilVendedor extends Fragment {
                             public void onClick(DialogInterface alertDialog, int which) {
                                 //We dissapear the dialog
                                 alertDialog.dismiss();
+                                positionOfProductsForElimination.clear();
                             }
                         });
                         //Finally we create our dialog from the dialog builder and its methods
@@ -192,20 +195,20 @@ public class FragmentPerfilVendedor extends Fragment {
     //This method allow me to read the products from the server
     public void getData(){
         //Here I give the direction from where we going to read the products data
-        String linkToJson = "https://api.myjson.com/bins/t48pz";
-        //String linkToJson = "192.168.88.124:8000/product";
+        //String linkToJson = "https://api.myjson.com/bins/t48pz";
+        String linkToJson = "http://192.168.137.67:8000/productj";
         //These 2 lines are necessary in order to allow us work for some smartphones
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
         //Url variable to allow us to manage an internet url where is stored our json file
-        URL url;
+        //URL url=null;
         //This variable will help us to make the reading or the connection to the server
         HttpURLConnection conn;
 
         try {
             //We create our link with the string passed before
-            url = new URL(linkToJson);
+            URL url = new URL(linkToJson);
             //we open a connection to the url of our json file
             conn = (HttpURLConnection) url.openConnection();
             //We made a request to get all in the file
@@ -233,6 +236,7 @@ public class FragmentPerfilVendedor extends Fragment {
             String json = "";
             //We parse our response to a String
             json = response.toString();
+            //Toast.makeText(getActivity(), json, Toast.LENGTH_SHORT).show();
             //To store the string json
             JSONArray jsonArr = null;
             //We create a JsonArray from the string that contains Json Object from all the response inside the GET response
