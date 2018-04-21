@@ -1,9 +1,10 @@
 package com.example.hugo.yachayfood;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -64,48 +65,41 @@ public class LateralMenu extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    private void displaySelectedScreen(int id){
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
         Fragment fragment = null;
 
-        switch (id){
-            case R.id.nav_shopper:
-                break;
-            case R.id.nav_seller:
-                fragment = new FragmentPerfilVendedor();
-                break;
-            case R.id.nav_shopping_cart:
-                break;
-            case R.id.nav_orders:
-                break;
-            case R.id.nav_feedback:
-                break;
-            case R.id.nav_about_us:
-                fragment = new About();
-                break;
-            case R.id.nav_help:
-                break;
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_shopper) {
+            // Handle the camera action
+        } else if (id == R.id.nav_seller) {
+            fragment = new FragmentPerfilVendedor();
+            //Intent intent = new Intent(this, PerfilVendedor.class);
+            //startActivity(intent);
+        } else if (id == R.id.nav_shopping_cart) {
+
+        } else if (id == R.id.nav_orders) {
+
+        } else if (id == R.id.nav_feedback) {
+
+        } else if (id == R.id.nav_about_us) {
+
+        } else if (id == R.id.nav_help) {
+
         }
 
-
         if(fragment != null){
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.content_lateral_menu, fragment);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.screen_frame_area, fragment);
             ft.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        displaySelectedScreen(id);
-
         return true;
     }
 }
