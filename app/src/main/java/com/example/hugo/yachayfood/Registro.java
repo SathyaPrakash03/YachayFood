@@ -1,10 +1,13 @@
 package com.example.hugo.yachayfood;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Registro extends AppCompatActivity {
 
@@ -29,4 +32,13 @@ public class Registro extends AppCompatActivity {
 
 
     }
+    public void goToAutentification(View view){
+        Intent intent = new Intent(this, Autentificacion.class);
+        startActivity(intent);
+        Toast toast = Toast.makeText(getApplicationContext(),"Te has registrado correctamente",Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+
+
 }

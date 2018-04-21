@@ -17,4 +17,10 @@ public class Autentificacion extends AppCompatActivity {
         Intent intent = new Intent(this, LateralMenu.class);
         startActivity(intent);
     }
+
+    public void goToRegister(View view){
+        Intent intent = new Intent(this, Registro.class);
+        startActivity(intent);
+    }
+
 }

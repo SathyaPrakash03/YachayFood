@@ -4,18 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_presen"
     tools:context=".Registro">
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="196dp"
         android:layout_marginEnd="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginStart="15dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="-1dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,7 +31,8 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/Nombre_de_usuario" />
+                android:text="@string/Nombre_de_usuario"
+                android:textColor="@color/colorWhite" />
 
             <EditText
                 android:id="@+id/editText3"
@@ -35,9 +40,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:textSize="12dp"
                 android:hint="@string/h_Nombre_de_usuario"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="12dp" />
 
         </LinearLayout>
 
@@ -51,16 +58,17 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/Contrasena" />
+                android:text="@string/Contrasena"
+                android:textColor="@color/colorWhite" />
 
             <EditText
                 android:id="@+id/editText4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textSize="12dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -73,16 +81,17 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/Repita_contrasena" />
+                android:text="@string/Repita_contrasena"
+                android:textColor="@color/colorWhite" />
 
             <EditText
                 android:id="@+id/editText5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textSize="12dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -95,16 +104,19 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/Nombre" />
+                android:text="@string/Nombre"
+                android:textColor="@color/colorWhite" />
 
             <EditText
                 android:id="@+id/editText6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="@string/h_Nombre" />
+                android:hint="@string/h_Nombre"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="12dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -117,16 +129,19 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/Apellido" />
+                android:text="@string/Apellido"
+                android:textColor="@color/colorWhite" />
 
             <EditText
                 android:id="@+id/editText7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="@string/h_Apellido" />
+                android:hint="@string/h_Apellido"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="12dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -139,16 +154,19 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/Email" />
+                android:text="@string/Email"
+                android:textColor="@color/colorWhite" />
 
             <EditText
                 android:id="@+id/editText8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="@string/h_Email" />
+                android:hint="@string/h_Email"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="12dp" />
 
         </LinearLayout>
 
@@ -162,16 +180,19 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/Telefono" />
+                android:text="@string/Telefono"
+                android:textColor="@color/colorWhite" />
 
             <EditText
                 android:id="@+id/editText9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="@string/h_Telefono" />
+                android:hint="@string/h_Telefono"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="12dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -184,16 +205,19 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/Direccion" />
+                android:text="@string/Direccion"
+                android:textColor="@color/colorWhite" />
 
             <EditText
                 android:id="@+id/editText2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="@string/h_Direccion" />
+                android:hint="@string/h_Direccion"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="12dp" />
 
         </LinearLayout>
 
@@ -208,12 +232,14 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/Eres_un_vendedor" />
+                android:text="@string/Eres_un_vendedor"
+                android:textColor="@color/colorWhite" />
 
             <TextView
                 android:id="@+id/textSi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
                 android:textSize="12dp"
 
                 />
@@ -233,6 +259,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:onClick="goToAutentification"
             android:text="@string/Registrarse" />
     </LinearLayout>
 
